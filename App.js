@@ -1,14 +1,22 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { store } from './Services/Store';
+import { Provider } from 'react-redux';
+import { useState } from 'react';
+import Test, { AddData } from './Test';
 
 export default function App() {
+// console.log(error);
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Provider store={store}>
+      {/* <Test/> */}
+      <AddData/>
+    </Provider>
   );
 }
+
+
+
 
 const styles = StyleSheet.create({
   container: {
